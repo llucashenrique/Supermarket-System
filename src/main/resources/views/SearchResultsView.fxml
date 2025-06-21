@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            xmlns="http://javafx.com/javafx"
+            fx:controller="com.lctech.supermercado.gui.SearchResultsController"
+            prefWidth="800" prefHeight="600">
+
+    <!-- Topo da tela com Menu -->
+    <top>
+        <MenuBar>
+            <Menu text="Options">
+                <MenuItem text="Voltar" onAction="#handleBack" />
+            </Menu>
+        </MenuBar>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 10;">
+            <TextField fx:id="searchField" promptText="Digite para pesquisar novamente..." />
+            <Button text="Pesquisar" onAction="#handleProductSearch" />
+        </VBox>
+    </top>
+
+    <!-- Centro da tela com ListView e botão de seleção -->
+    <center>
+        <VBox alignment="CENTER" spacing="10" style="-fx-padding: 10;">
+            <Label text="Resultados da Pesquisa" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+            <ListView fx:id="resultsList" prefHeight="400" prefWidth="600" />
+            <Button text="Selecionar Produto" onAction="#handleSelectItem" />
+        </VBox>
+    </center>
+
+    <!-- Rodapé com botão de fechar -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10;">
+            <Button text="Fechar" onAction="#handleClose" />
+        </HBox>
+    </bottom>
+</BorderPane>

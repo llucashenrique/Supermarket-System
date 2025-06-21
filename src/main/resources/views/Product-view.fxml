@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<?import java.lang.String?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.lctech.supermercado.controller.ProductsControllerFX"
+            prefWidth="750" prefHeight="800"
+            style="-fx-background-color: #f0f4f8;">
+
+    <top>
+        <MenuBar>
+            <Menu text="Opções">
+                <MenuItem text="Voltar" onAction="#handleBack"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <VBox spacing="20" alignment="TOP_CENTER" style="-fx-padding: 30;">
+            <Label text="Cadastro de Produtos" style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #264653;"/>
+
+            <!-- Campo de busca -->
+            <TextField fx:id="searchField"
+                       promptText="Pesquisar produto..."
+                       style="-fx-background-radius: 8; -fx-padding: 8; -fx-pref-width: 400;"/>
+
+            <ListView fx:id="productSuggestions" prefHeight="100"/>
+
+            <!-- Seção: Identificação -->
+            <TitledPane text="1. Identificação do Produto" expanded="true">
+                <GridPane hgap="15" vgap="12" style="-fx-padding: 20;">
+                    <Label text="Nome:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="productNameField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Preço:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="productPriceField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Estoque:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="productStockField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="Código de Barras:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="productBarcodeField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="NCM:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <TextField fx:id="productNcmField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                    <Label text="Tipo de Produto:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                    <ChoiceBox fx:id="productTypeChoiceBox" GridPane.rowIndex="5" GridPane.columnIndex="1">
+                        <items>
+                            <FXCollections fx:factory="observableArrayList">
+                                <String fx:value="Kg"/>
+                                <String fx:value="Unidade"/>
+                                <String fx:value="Litro"/>
+                                <String fx:value="Pacote"/>
+                            </FXCollections>
+                        </items>
+                    </ChoiceBox>
+
+                    <Label text="Item de Balança:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                    <CheckBox fx:id="balancaCheckBox" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                </GridPane>
+            </TitledPane>
+
+            <!-- Seção: Tributação -->
+            <TitledPane text="2. Tributação" expanded="false">
+                <GridPane hgap="15" vgap="12" style="-fx-padding: 20;">
+                    <Label text="Origem:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="origemField" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="0 = Nacional, 1 = Estrangeira..."/>
+
+                    <Label text="CST ICMS:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <TextField fx:id="cstIcmsField" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+
+                    <Label text="Alíquota ICMS (%):" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+                    <TextField fx:id="aliquotaIcmsField" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
+
+                    <Label text="CST PIS:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+                    <TextField fx:id="cstPisField" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
+
+                    <Label text="Alíquota PIS (%):" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+                    <TextField fx:id="aliquotaPisField" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
+
+                    <Label text="CST COFINS:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+                    <TextField fx:id="cstCofinsField" GridPane.rowIndex="5" GridPane.columnIndex="1"/>
+
+                    <Label text="Alíquota COFINS (%):" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+                    <TextField fx:id="aliquotaCofinsField" GridPane.rowIndex="6" GridPane.columnIndex="1"/>
+                </GridPane>
+            </TitledPane>
+
+            <!-- Seção: Outros -->
+            <TitledPane text="3. Outros" expanded="false">
+                <GridPane hgap="15" vgap="12" style="-fx-padding: 20;">
+                    <Label text="CEST:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+                    <TextField fx:id="cestField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+
+                    <Label text="Incluir no total da nota?" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+                    <CheckBox fx:id="incluirNoTotalCheckBox" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
+                </GridPane>
+            </TitledPane>
+
+            <!-- Botões -->
+            <HBox spacing="20" alignment="CENTER">
+                <Button text="Salvar Alterações" onAction="#handleSaveChanges"
+                        style="-fx-background-color: #2a9d8f; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 20;"/>
+                <Button text="Adicionar Produto" onAction="#handleAddProduct"
+                        style="-fx-background-color: #e76f51; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 20;"/>
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,10 @@
+SUPERMERCADO EXEMPLO
+Data: 07/05/2025 19:49
+Pedido: #101
+--------------------------------
+Mandioca  x1.0  R$11,50
+--------------------------------
+Total: R$11,50
+Pagamento: DÉBITO
+Obrigado pela preferência!
+

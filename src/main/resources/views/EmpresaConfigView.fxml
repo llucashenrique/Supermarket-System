@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane xmlns:fx="http://javafx.com/fxml"
+          fx:controller="com.lctech.supermercado.controller.EmpresaConfigController"
+          hgap="10" vgap="10" alignment="CENTER">
+
+    <padding>
+        <Insets top="20" right="20" bottom="20" left="20"/>
+    </padding>
+
+    <!-- CNPJ -->
+    <Label text="CNPJ:" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+    <TextField fx:id="cnpjField" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
+    <Button text="Buscar dados" onAction="#handleBuscarEmpresaPorCnpj" GridPane.rowIndex="0" GridPane.columnIndex="2"/>
+
+    <!-- Razão Social -->
+    <Label text="Razão Social:" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+    <TextField fx:id="razaoSocialField" GridPane.rowIndex="1" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+    <!-- Nome Fantasia -->
+    <Label text="Nome Fantasia:" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+    <TextField fx:id="nomeFantasiaField" GridPane.rowIndex="2" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+    <!-- Endereço -->
+    <Label text="Endereço:" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+    <TextField fx:id="enderecoField" GridPane.rowIndex="3" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+    <!-- CEP -->
+    <Label text="CEP:" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+    <TextField fx:id="cepField" onAction="#buscarEnderecoPorCep" GridPane.rowIndex="4" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+    <!-- Município -->
+    <Label text="Município:" GridPane.rowIndex="5" GridPane.columnIndex="0"/>
+    <TextField fx:id="municipioField" GridPane.rowIndex="5" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+    <!-- UF -->
+    <Label text="UF:" GridPane.rowIndex="6" GridPane.columnIndex="0"/>
+    <TextField fx:id="ufField" GridPane.rowIndex="6" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+    <!-- Código IBGE -->
+    <Label text="Código IBGE:" GridPane.rowIndex="7" GridPane.columnIndex="0"/>
+    <TextField fx:id="codigoIbgeField" GridPane.rowIndex="7" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+    <!-- Telefone -->
+    <Label text="Telefone:" GridPane.rowIndex="8" GridPane.columnIndex="0"/>
+    <TextField fx:id="telefoneField" GridPane.rowIndex="8" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+    <!-- Email -->
+    <Label text="Email:" GridPane.rowIndex="9" GridPane.columnIndex="0"/>
+    <TextField fx:id="emailField" GridPane.rowIndex="9" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+    <!-- Inscrição Estadual -->
+    <Label text="Inscrição Estadual:" GridPane.rowIndex="10" GridPane.columnIndex="0"/>
+    <TextField fx:id="ieField" GridPane.rowIndex="10" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+    <!-- Regime Tributário -->
+    <Label text="Regime Tributário:" GridPane.rowIndex="11" GridPane.columnIndex="0"/>
+    <TextField fx:id="regimeField" GridPane.rowIndex="11" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+    <!-- Certificado Digital -->
+    <Label text="Certificado (.pfx):" GridPane.rowIndex="12" GridPane.columnIndex="0"/>
+    <TextField fx:id="certificadoPathField" editable="false" GridPane.rowIndex="12" GridPane.columnIndex="1"/>
+    <Button text="Selecionar" onAction="#selecionarCertificado" GridPane.rowIndex="12" GridPane.columnIndex="2"/>
+
+    <!-- Senha do Certificado -->
+    <Label text="Senha do Certificado:" GridPane.rowIndex="13" GridPane.columnIndex="0"/>
+    <PasswordField fx:id="senhaCertificadoField" GridPane.rowIndex="13" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+    <!-- Diretório dos XMLs -->
+    <Label text="Diretório XMLs:" GridPane.rowIndex="14" GridPane.columnIndex="0"/>
+    <TextField fx:id="xmlPathField" editable="false" GridPane.rowIndex="14" GridPane.columnIndex="1"/>
+    <Button text="Selecionar" onAction="#selecionarDiretorioXml" GridPane.rowIndex="14" GridPane.columnIndex="2"/>
+
+    <!-- Botão Salvar -->
+    <Button text="Salvar Configurações"
+            onAction="#salvarConfiguracoes"
+            GridPane.rowIndex="15" GridPane.columnIndex="1" GridPane.columnSpan="2"
+            style="-fx-font-weight: bold; -fx-background-color: #2ecc71; -fx-text-fill: white;"/>
+
+    <Button text="Empresas já cadastradas"
+            onAction="#abrirListaDeEmpresas"
+            GridPane.rowIndex="16" GridPane.columnIndex="1" GridPane.columnSpan="2"/>
+
+</GridPane>

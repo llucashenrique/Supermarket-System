@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.lctech.supermercado.controller.EmpresaListController">
+
+    <top>
+        <Label text="Empresas Cadastradas"
+               style="-fx-font-size: 16px; -fx-padding: 10;"/>
+    </top>
+
+    <center>
+        <TableView fx:id="empresaTable" prefHeight="400" prefWidth="1000">
+            <columns>
+                <TableColumn fx:id="colRazao" text="Razão Social" prefWidth="150"/>
+                <TableColumn fx:id="colCnpj" text="CNPJ" prefWidth="120"/>
+                <TableColumn fx:id="colEndereco" text="Endereço" prefWidth="200"/>
+                <TableColumn fx:id="colMunicipio" text="Município" prefWidth="150"/>
+                <TableColumn fx:id="colUf" text="UF" prefWidth="50"/>
+                <TableColumn fx:id="colCep" text="CEP" prefWidth="90"/>
+                <TableColumn fx:id="colTelefone" text="Telefone" prefWidth="120"/>
+                <TableColumn fx:id="colEmail" text="Email" prefWidth="150"/>
+                <TableColumn fx:id="colIbge" text="Cód. IBGE" prefWidth="90"/>
+                <TableColumn fx:id="colAcoes" text="Ações" prefWidth="100"/>
+            </columns>
+        </TableView>
+    </center>
+
+</BorderPane>

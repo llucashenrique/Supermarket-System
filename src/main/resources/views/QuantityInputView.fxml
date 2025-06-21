@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lctech.supermercado.controller.QuantityInputController"
+      alignment="CENTER" spacing="10" prefWidth="300" prefHeight="200">
+
+    <Label text="Quantidade de Itens" style="-fx-font-size: 16px; -fx-font-weight: bold;" />
+
+    <Label fx:id="stockLabel" text="Estoque disponível: 0" />
+
+    <!-- Campo para inserir a quantidade -->
+    <HBox spacing="10" alignment="CENTER">
+        <Label text="Quantidade:" />
+        <TextField fx:id="quantityField" promptText="1" />
+    </HBox>
+
+    <!-- Botões -->
+    <HBox spacing="10" alignment="CENTER">
+        <Button text="Confirmar" onAction="#handleConfirm" />
+        <Button text="Cancelar" onAction="#handleCancel" />
+    </HBox>
+</VBox>

@@ -1,0 +1,74 @@
+.background-gradient {
+    -fx-background-color: linear-gradient(to bottom, #f5f7fa, #c3cfe2);
+}
+
+.section-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2a9d8f;
+}
+
+.input-field {
+    -fx-background-radius: 12;
+    -fx-padding: 8 14;
+    -fx-font-size: 14px;
+    -fx-background-color: white;
+    -fx-border-color: #bbb;
+    -fx-border-radius: 12;
+}
+
+.cart-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #264653;
+}
+
+.total-label {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #e76f51;
+}
+
+.cart-table {
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 5);
+}
+
+.btn {
+    -fx-background-radius: 10;
+    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-padding: 10 22;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 4);
+    -fx-transition: all 0.3s ease-in-out;
+}
+
+.view-orders-btn {
+    -fx-background-color: #f4a261;
+}
+
+.remove-btn {
+    -fx-background-color: #e63946;
+}
+
+.checkout-btn {
+    -fx-background-color: #2a9d8f;
+}
+
+.btn:hover {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.4), 10, 0, 0, 4);
+    -fx-opacity: 0.95;
+}
+
+.tooltip {
+    -fx-font-size: 14px;
+    -fx-background-color: #264653;
+    -fx-text-fill: white;
+    -fx-padding: 10;
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+}
+
+

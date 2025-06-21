@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.lctech.supermercado.gui.ClienteContaController"
+            prefWidth="800" prefHeight="550"
+            style="-fx-background-color: #f0f4f8;">
+
+    <top>
+        <VBox spacing="12" style="-fx-padding: 20;">
+            <MenuBar>
+                <Menu text="Opções">
+                    <MenuItem text="Voltar" onAction="#handleBack"/>
+                </Menu>
+            </MenuBar>
+
+            <Label text="Consulta de Conta do Cliente"
+                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #264653;"/>
+
+            <ComboBox fx:id="clienteComboBox" promptText="Selecione um cliente"
+                      style="-fx-background-radius: 8; -fx-padding: 6 10;"/>
+        </VBox>
+    </top>
+
+    <center>
+        <TableView fx:id="pedidosTable" prefHeight="400"
+                   style="-fx-background-radius: 8; -fx-border-color: #ddd; -fx-border-radius: 8; -fx-padding: 10;">
+            <columns>
+                <TableColumn fx:id="selecionadoColumn" text="Selecionar" prefWidth="90"/>
+                <TableColumn fx:id="pedidoIdColumn" text="ID do Pedido" prefWidth="100"/>
+                <TableColumn fx:id="dataColumn" text="Data" prefWidth="120"/>
+                <TableColumn fx:id="quantidadeColumn" text="Qtd Itens" prefWidth="100"/>
+                <TableColumn fx:id="totalColumn" text="Total" prefWidth="100"/>
+                <TableColumn fx:id="statusColumn" text="Status" prefWidth="100"/>
+                <TableColumn fx:id="dataPagamentoColumn" text="Data Pagamento" prefWidth="150"/>
+            </columns>
+        </TableView>
+    </center>
+
+    <bottom>
+        <VBox spacing="12" style="-fx-padding: 20;" alignment="CENTER">
+            <Label fx:id="totalFiadoLabel" text="Total em aberto: R$ 0,00"
+                   style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #e76f51;" />
+            <Label fx:id="totalSelecionadoLabel" text="Total selecionado: R$ 0,00"
+                   style="-fx-font-size: 14px; -fx-text-fill: #333;" />
+
+            <HBox spacing="20" alignment="CENTER">
+                <Button text="Pagar Selecionados" onAction="#handlePagamento"
+                        style="-fx-background-color: #2a9d8f; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 20;"/>
+
+                <Button text="Ver Itens do Pedido" onAction="#handleViewOrderDetails"
+                        style="-fx-background-color: #264653; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 8; -fx-padding: 8 20;"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+</BorderPane>

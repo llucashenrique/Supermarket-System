@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.lctech.supermercado.gui.ItensPedidoController"
+      alignment="CENTER" spacing="20" style="-fx-padding: 30; -fx-background-color: #f0f4f8;">
+
+    <Label text="Itens do Pedido"
+           style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #264653;" />
+
+    <TableView fx:id="itensTable" prefHeight="400" prefWidth="500"
+               style="-fx-background-radius: 8; -fx-border-color: #ddd; -fx-border-radius: 8;">
+        <columns>
+            <TableColumn fx:id="produtoColumn" text="Produto" prefWidth="250"/>
+            <TableColumn fx:id="quantidadeColumn" text="Quantidade" prefWidth="100"/>
+            <TableColumn fx:id="precoColumn" text="Preço" prefWidth="150"/>
+        </columns>
+    </TableView>
+
+    <Label fx:id="totalLabel" text="Total: R$ 0,00"
+           style="-fx-font-size: 18px; -fx-font-weight: bold; -fx-text-fill: #e76f51;" />
+
+</VBox>

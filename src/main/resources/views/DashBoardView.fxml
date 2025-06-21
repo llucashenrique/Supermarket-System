@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+
+<BorderPane fx:id="rootPane" xmlns:fx="http://javafx.com/fxml" fx:controller="com.lctech.supermercado.controller.DashBoardController"
+            prefWidth="800" prefHeight="500" style="-fx-background-color: #f8f9fa;">
+
+    <top>
+        <MenuBar>
+            <Menu text="Options">
+                <MenuItem text="Logout" onAction="#handleLogout"/>
+                <MenuItem text="Exit" onAction="#handleExit"/>
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="30">
+            <VBox.margin>
+                <Insets top="40" />
+            </VBox.margin>
+
+            <Label text="Dashboard"
+                   style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #264653;"/>
+
+            <VBox spacing="15" alignment="CENTER">
+                <Button text="Registrar Venda" onAction="#handleRegisterSale"
+                        style="-fx-background-color: #2a9d8f; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 300px; -fx-padding: 10 0; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.1, 0, 2);"/>
+
+                <Button text="Gerenciar Produtos" onAction="#handleManageProducts"
+                        style="-fx-background-color: #e76f51; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 300px; -fx-padding: 10 0; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0.1, 0, 2);"/>
+
+                <Button text="Cadastro de Clientes" onAction="#handleRegisterCustomer"
+                        style="-fx-background-color: #e9c46a; -fx-text-fill: #333; -fx-font-size: 16px; -fx-pref-width: 300px; -fx-padding: 10 0; -fx-background-radius: 10;"/>
+
+                <Button text="Conta do Cliente (Fiado)" onAction="#handleClienteConta"
+                        style="-fx-background-color: #264653; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 300px; -fx-padding: 10 0; -fx-background-radius: 10;"/>
+
+                <Button text="Analytics" onAction="#handleOpenAnalytics"
+                        style="-fx-background-color: #264653; -fx-text-fill: white; -fx-font-size: 16px; -fx-pref-width: 300px; -fx-padding: 10 0; -fx-background-radius: 10;"/>
+                <Button text="Configurações da Empresa"
+                        onAction="#abrirConfiguracoesEmpresa"
+                        style="-fx-background-color: #3498db; -fx-text-fill: white;"/>
+
+
+            </VBox>
+        </VBox>
+    </center>
+
+    <bottom>
+        <Label text="Bem-vindo ao Sistema de Supermercado"
+               style="-fx-font-size: 14px; -fx-text-fill: #6c757d; -fx-padding: 10;" alignment="CENTER"/>
+    </bottom>
+</BorderPane>

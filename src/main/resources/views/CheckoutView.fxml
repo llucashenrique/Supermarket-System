@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.lctech.supermercado.gui.CheckoutController"
+      spacing="20" alignment="CENTER"
+      style="-fx-padding: 30; -fx-background-color: #f0f4f8;">
+
+    <Label text="Resumo do Checkout"
+           style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #264653;"/>
+
+    <Label text="Total da Venda:"
+           style="-fx-font-size: 16px; -fx-text-fill: #333333;"/>
+
+    <Label fx:id="totalLabel" text="R$ 0,00"
+           style="-fx-font-size: 26px; -fx-font-weight: bold; -fx-text-fill: #e76f51;"/>
+
+    <Label text="Escolha a Forma de Pagamento:"
+           style="-fx-font-size: 16px; -fx-text-fill: #333333;"/>
+
+    <HBox spacing="15" alignment="CENTER">
+        <HBox spacing="15" alignment="CENTER">
+            <Button fx:id="btnDinheiro" text="Dinheiro (F1)" onAction="#handlePagamentoDinheiro"
+                    style="-fx-background-color: #2a9d8f; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 10;"/>
+
+            <Button fx:id="btnDebito" text="Débito (F2)" onAction="#handlePagamentoDebito"
+                    style="-fx-background-color: #e9c46a; -fx-text-fill: #333; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 10;"/>
+
+            <Button fx:id="btnCredito" text="Crédito (F3)" onAction="#handlePagamentoCredito"
+                    style="-fx-background-color: #f4a261; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 10;"/>
+
+            <Button fx:id="btnPix" text="Pix (F4)" onAction="#handlePagamentoPix"
+                    style="-fx-background-color: #e76f51; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 10 20; -fx-background-radius: 10;"/>
+        </HBox>
+
+    </HBox>
+
+    <Button text="Finalizar Venda" onAction="#handleConfirmarPagamento"
+            style="-fx-background-color: #264653; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 10 30; -fx-background-radius: 10;"/>
+
+</VBox>

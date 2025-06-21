@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.lctech.supermercado.gui.SalesController"
+            prefWidth="900" prefHeight="620"
+            styleClass="background-gradient">
+
+    <!-- TOPO -->
+    <top>
+        <VBox spacing="15" style="-fx-padding: 25;">
+            <MenuBar>
+                <Menu text="Opções">
+                    <MenuItem text="Voltar" onAction="#handleBack"/>
+                </Menu>
+            </MenuBar>
+
+            <Label text="Buscar Produto" styleClass="section-title"/>
+            <TextField fx:id="productField"
+                       promptText="Digite o nome ou ID do produto e pressione Enter..."
+                       onAction="#handleProductSearch"
+                       styleClass="input-field"/>
+
+            <Label text="Selecionar Cliente" styleClass="section-title"/>
+            <ComboBox fx:id="customerComboBox"
+                      promptText="Selecione um cliente"
+                      styleClass="input-field"/>
+        </VBox>
+    </top>
+
+    <!-- CENTRO -->
+    <center>
+        <VBox spacing="18" alignment="CENTER" style="-fx-padding: 20;" VBox.vgrow="ALWAYS">
+            <Label text="Carrinho de Compras" styleClass="cart-title"/>
+
+            <TableView fx:id="cartTable" VBox.vgrow="ALWAYS" styleClass="cart-table">
+                <columns>
+                    <TableColumn fx:id="productNameColumn" text="Produto" prefWidth="380"/>
+                    <TableColumn fx:id="quantityColumn" text="Quantidade" prefWidth="160"/>
+                    <TableColumn fx:id="totalPriceColumn" text="Preço Total" prefWidth="220"/>
+                </columns>
+            </TableView>
+
+            <Label fx:id="totalLabel" text="Total: R$ 0.00" styleClass="total-label"/>
+        </VBox>
+    </center>
+
+    <!-- RODAPÉ -->
+    <bottom>
+        <VBox spacing="10" alignment="CENTER" style="-fx-padding: 20;">
+
+            <!-- Botões principais -->
+            <HBox spacing="20" alignment="CENTER">
+                <Button text="Ver Todos os Pedidos" onAction="#handleViewOrders"
+                        styleClass="btn view-orders-btn"/>
+                <Button text="Remover Item" onAction="#handleRemoveItem"
+                        styleClass="btn remove-btn"/>
+                <Button text="Ir para Checkout" onAction="#handleAbrirCheckout"
+                        styleClass="btn checkout-btn"/>
+            </HBox>
+        </VBox>
+    </bottom>
+
+
+</BorderPane>

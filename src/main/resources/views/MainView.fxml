@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.lctech.supermercado.controller.MainController"
+            prefWidth="600" prefHeight="520"
+            style="-fx-background-color: #f0f4f8;">
+
+    <!-- Topo com logo + texto -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" style="-fx-padding: 20 30 10 30;">
+            <ImageView fitHeight="50" fitWidth="50" preserveRatio="true">
+                <image>
+                    <Image url="@/images/lctech_logo.png.png"/>
+                </image>
+            </ImageView>
+
+            <VBox spacing="5">
+                <Label text="LCTECH"
+                       style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #2a9d8f;"/>
+                <Label text="Sistema de Vendas do Supermercado"
+                       style="-fx-font-size: 14px; -fx-text-fill: #264653;"/>
+            </VBox>
+        </HBox>
+    </top>
+
+    <!-- Formulário de login -->
+    <center>
+        <VBox alignment="CENTER" spacing="20">
+            <GridPane alignment="CENTER" hgap="10" vgap="12"
+                      style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0.3, 0, 4);">
+                <!-- Username -->
+                <Label text="Username:"/>
+                <TextField fx:id="usernameField" GridPane.columnIndex="1" promptText="Digite seu username"/>
+
+                <!-- Password -->
+                <Label text="Password:" GridPane.rowIndex="1"/>
+                <PasswordField fx:id="passwordField" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Digite sua senha"/>
+
+                <!-- Botão de Login -->
+                <Button text="Login" fx:id="loginButton" GridPane.rowIndex="2" GridPane.columnSpan="2"
+                        onAction="#handleLogin"
+                        style="-fx-background-color: #2a9d8f; -fx-text-fill: white; -fx-font-size: 14px; -fx-padding: 6 20; -fx-background-radius: 8;"/>
+            </GridPane>
+        </VBox>
+    </center>
+
+    <!-- Rodapé com texto + imagem -->
+    <bottom>
+        <VBox alignment="CENTER" spacing="5" style="-fx-padding: 10;">
+            <Label text="Versão 0.1 - Desenvolvido por LCTECH"
+                   style="-fx-font-size: 12px; -fx-text-fill: #7a7a7a;"/>
+        </VBox>
+    </bottom>
+</BorderPane>

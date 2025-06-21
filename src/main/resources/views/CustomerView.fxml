@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.lctech.supermercado.controller.CustomerController"
+            prefWidth="800" prefHeight="600"
+            style="-fx-background-color: #f0f4f8;">
+
+    <top>
+        <MenuBar>
+            <Menu text="Opções">
+                <MenuItem text="Voltar" onAction="#handleBack" />
+            </Menu>
+        </MenuBar>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20" prefWidth="600" style="-fx-padding: 30;">
+            <Label text="Cadastro de Clientes"
+                   style="-fx-font-size: 24px; -fx-font-weight: bold; -fx-text-fill: #264653;" />
+
+            <GridPane hgap="12" vgap="15" alignment="CENTER"
+                      style="-fx-background-color: white; -fx-padding: 30; -fx-background-radius: 10; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 8, 0.3, 0, 4);">
+
+                <Label text="Nome:"/>
+                <TextField fx:id="nameField" GridPane.columnIndex="1" promptText="Digite o nome completo" />
+
+                <Label text="Endereço:" GridPane.rowIndex="1"/>
+                <TextField fx:id="addressField" GridPane.rowIndex="1" GridPane.columnIndex="1" promptText="Rua, número, bairro..." />
+
+                <Label text="Telefone:" GridPane.rowIndex="2"/>
+                <TextField fx:id="phoneNumberField" GridPane.rowIndex="2" GridPane.columnIndex="1" promptText="(XX) XXXXX-XXXX" />
+
+                <Label text="E-mail:" GridPane.rowIndex="3"/>
+                <TextField fx:id="emailField" GridPane.rowIndex="3" GridPane.columnIndex="1" promptText="exemplo@email.com" />
+
+                <Label text="CPF:" GridPane.rowIndex="4"/>
+                <TextField fx:id="cpfField" GridPane.rowIndex="4" GridPane.columnIndex="1" promptText="000.000.000-00" />
+
+                <Label text="CNPJ:" GridPane.rowIndex="5"/>
+                <HBox spacing="10" GridPane.rowIndex="5" GridPane.columnIndex="1">
+                    <TextField fx:id="cnpjField" promptText="00.000.000/0001-00"/>
+                    <Button text="Buscar" onAction="#handleSearchByCnpj"
+                            style="-fx-background-color: #2a9d8f; -fx-text-fill: white; -fx-background-radius: 6;" />
+                </HBox>
+            </GridPane>
+
+            <Button text="Cadastrar" onAction="#handleAddCustomer"
+                    style="-fx-background-color: #264653; -fx-text-fill: white; -fx-font-size: 16px; -fx-padding: 8 30; -fx-background-radius: 10;" />
+        </VBox>
+    </center>
+</BorderPane>
